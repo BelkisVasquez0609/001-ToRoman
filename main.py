@@ -1,16 +1,31 @@
-# This is a sample Python script.
+def Validator(InputTest):
+    Result = ""
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    if not InputTest:
+        Result = "You must fill in the field to perform the conversion"
+        return Result
+    else:
+        if InputTest.replace('.', '', 1).isnumeric():
+            InputTest = round(float(InputTest))
+            if 0 <= InputTest > 5000:
+                Result = "The number entered is out of range"
+                return Result
+            else:
+                Result = "The Result is valid"
+                return Result
+        else:
+            Result = "Invalid Input"
+            return Result
 
+def Convertions(Continue):
+    Result = ""
+    if not Continue:
+        Result = "You must fill in the field to perform the conversion"
+        return Result
+    elif Continue.isnumeric():
+        Result = "Invalid Entry"
+        return Result
+    else:
+        Result = "Valid Entry"
+        return Result
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-    input()
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
