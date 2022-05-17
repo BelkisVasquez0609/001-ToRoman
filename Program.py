@@ -20,10 +20,11 @@ def ConvertToRoma(number):
 # Method Main
 if __name__ == '__main__':
     ContinueP = "S"
-    Stay = True
+
     print("Welcome to the app to convert decimals and arabic numbers to romans")
 
     while ContinueP == "S":
+        Stay = True
         print("Press 'Enter' to continue...")
         pEnter = input()
 
@@ -46,17 +47,20 @@ if __name__ == '__main__':
                     print(resultRoman)
             else:
                 print("Invalid Entry.")
-        while Stay:
-            print("If you want to continue enter ('S'), else press any key")
-            ContinueP = input().upper()
+            while Stay:
+                print("If you want to continue enter ('S'), else press any key")
+                ContinueP = input().upper()
 
-            if not ContinueP:
-                print("You must fill in the field")
-                Stay = True
-            elif ContinueP.isnumeric():
-                Stay = True
-            else:
-                Stay = False
+                if not ContinueP:
+                    print("You must fill in the field")
+                    Stay = True
+                    ContinueP = "S"
+                elif ContinueP.isnumeric():
+                    Stay = True
+                    ContinueP = "S"
+                else:
+                    Stay = False
+
 
 print("See you later")
-input
+input()
